@@ -1,6 +1,8 @@
 defmodule Mix.Tasks.Mf.Gen.Cert do
   @shortdoc "Generates a self-signed certificate for HTTPS testing"
-
+  # taken from :
+  # https://github.com/phoenixframework/phoenix/blob/master/lib/mix/tasks/phx.gen.cert.ex
+  # MiT License - https://github.com/phoenixframework/phoenix/blob/master/LICENSE.md
   @default_path "priv/cert/selfsigned"
   @default_name "Self-signed test certificate"
   @default_hostnames ["localhost"]
@@ -310,4 +312,3 @@ defmodule Mix.Tasks.Mf.Gen.Cert do
     :crypto.hash(:sha, :public_key.der_encode(:RSAPublicKey, public_key))
   end
 end
-
